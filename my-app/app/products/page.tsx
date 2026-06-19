@@ -1,8 +1,10 @@
 import React from 'react';
-import Link from 'next/link'; // Import Link
+import Link from 'next/link';
+import wait from '@/lib/wait';
 import { products } from '@/data/products';
 
-export default function ProductsPage() {
+export default async function ProductsPage() {
+    await wait(2000);
     return (
         <div className="flex-grow max-w-6xl mx-auto px-4 py-12 md:py-16 w-full relative overflow-hidden">
             <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-indigo-500/5 blur-[120px] rounded-full pointer-events-none" />
