@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 
-export default function AboutError({
+export default function GlobalRouteError({
     error,
     reset,
 }: {
@@ -10,7 +10,7 @@ export default function AboutError({
     reset: () => void;
 }) {
     useEffect(() => {
-        console.error("Caught route runtime error:", error);
+        console.error("Global boundary caught an error:", error);
     }, [error]);
 
     return (
@@ -27,13 +27,13 @@ export default function AboutError({
                         Something went wrong
                     </h2>
                     <p className="text-slate-400 text-sm">
-                        An unexpected error occurred while compiling the information on this page.
+                        An unexpected error occurred while processing this request.
                     </p>
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                     <button
-                        onClick={() => reset()} // Attempts to re-render the segment
+                        onClick={() => reset()}
                         className="w-full sm:w-auto inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-slate-950 bg-indigo-400 hover:bg-indigo-300 active:bg-indigo-500 rounded-lg transition-colors shadow-lg shadow-indigo-500/10"
                     >
                         Try Again
