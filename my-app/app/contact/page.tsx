@@ -1,6 +1,8 @@
 import React from 'react';
+import wait from '@/lib/wait';
 
-export default function ContactPage() {
+export default async function ContactPage() {
+    await wait(2000);
     return (
         <div className="flex-grow max-w-5xl mx-auto px-4 py-12 md:py-16 w-full relative overflow-hidden">
             <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-indigo-500/5 blur-[130px] rounded-full pointer-events-none" />
