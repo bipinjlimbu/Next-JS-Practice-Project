@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import wait from '@/lib/wait';
 import { products } from '@/data/products';
 
 export default async function ProductDetailPage({
@@ -15,6 +16,8 @@ export default async function ProductDetailPage({
     if (!product) {
         notFound();
     }
+
+    await wait(2000);
 
     return (
         <div className="flex-grow max-w-3xl mx-auto px-4 py-16 md:py-24 w-full relative overflow-hidden">
