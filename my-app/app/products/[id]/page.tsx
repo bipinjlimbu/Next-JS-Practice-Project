@@ -4,11 +4,7 @@ import { notFound } from 'next/navigation';
 import wait from '@/lib/wait';
 import { products } from '@/data/products';
 
-export default async function ProductDetailPage({
-    params,
-}: {
-    params: Promise<{ id: string }>;
-}) {
+export default async function ProductDetailPage({ params }: PageProps<"/products/[id]">) {
     const { id } = await params;
 
     const product = products.find((p) => p.id === parseInt(id));
