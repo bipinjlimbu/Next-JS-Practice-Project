@@ -1,6 +1,8 @@
 import React from 'react';
+import wait from '@/lib/wait';
 
-export default function About() {
+export default async function About() {
+    await wait(2000);
     return (
         <div className="flex-grow max-w-4xl mx-auto px-4 py-16 md:py-24 w-full relative overflow-hidden">
             <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-indigo-500/5 blur-[120px] rounded-full pointer-events-none" />
