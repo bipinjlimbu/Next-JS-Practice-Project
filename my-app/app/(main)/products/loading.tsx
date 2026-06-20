@@ -6,11 +6,9 @@ export default function ProductsLoading() {
 
             <div className="space-y-10">
                 <div className="space-y-3">
-                    <div className="h-5 w-16 bg-slate-800 rounded-full" />
-                    <div className="h-10 w-48 bg-slate-800 rounded-xl" />
+                    <div className="h-9 w-48 bg-slate-800 rounded-xl" />
                     <div className="space-y-2 max-w-md">
                         <div className="h-4 bg-slate-800 rounded" />
-                        <div className="h-4 w-2/3 bg-slate-800 rounded" />
                     </div>
                 </div>
 
@@ -18,21 +16,25 @@ export default function ProductsLoading() {
                     {[...Array(6)].map((_, index) => (
                         <div
                             key={index}
-                            className="p-6 border border-slate-800 rounded-xl flex flex-col justify-between space-y-6"
+                            className="p-6 border border-slate-800 rounded-xl flex flex-col justify-between space-y-4"
                         >
                             <div className="space-y-4">
+                                <div className="w-full h-48 bg-slate-800 rounded-lg" />
+
                                 <div className="flex items-center justify-between">
-                                    <div className="h-4 w-20 bg-slate-800 rounded" />
+                                    <div className="h-5 w-20 bg-slate-800 rounded" />
                                     <div className="h-5 w-12 bg-slate-800 rounded" />
                                 </div>
-                                <div className="h-6 w-3/4 bg-slate-800 rounded-lg" />
+
                                 <div className="space-y-2">
-                                    <div className="h-3 bg-slate-800 rounded" />
-                                    <div className="h-3 w-5/6 bg-slate-800 rounded" />
+                                    <div className="h-5 w-5/6 bg-slate-800 rounded" />
+                                    <div className="h-5 w-1/2 bg-slate-800 rounded" />
                                 </div>
                             </div>
 
-                            <div className="h-8 bg-slate-800 rounded-lg" />
+                            <div className="pt-2">
+                                <div className="h-8 bg-slate-800 rounded-lg" />
+                            </div>
                         </div>
                     ))}
                 </div>
