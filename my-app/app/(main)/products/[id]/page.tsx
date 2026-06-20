@@ -2,16 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import wait from '@/lib/wait';
-import { products } from '@/data/products';
+import FetchFakeStoreAPI from '@/components/FetchFakeStoreAPI';
 
 export default async function ProductDetailPage({ params }: PageProps<"/products/[id]">) {
     const { id } = await params;
 
-    const product = products.find((p) => p.id === parseInt(id));
+    const product: ProductsType | null = await FetchFakeStoreAPI(`/products/${id}`);
 
-    if (!product) {
-        notFound();
-    }
+    if (!product) return notFound();
 
     await wait(2000);
 
@@ -30,17 +28,25 @@ export default async function ProductDetailPage({ params }: PageProps<"/products
                 </div>
 
                 <div className="p-8 md:p-12 bg-slate-900/40 border border-slate-800 rounded-2xl space-y-6">
+                    <div className="w-full h-64 md:h-80 bg-slate-950 rounded-xl overflow-hidden border border-slate-800/60 flex items-center justify-center p-6">
+                        <img
+                            src={product.image}
+                            alt={product.title}
+                            className="max-h-full max-w-full object-contain mix-blend-screen opacity-90"
+                        />
+                    </div>
+
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-6">
                         <div className="space-y-1">
                             <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-400 bg-indigo-950/60 px-2 py-0.5 border border-indigo-900/50 rounded">
                                 {product.category}
                             </span>
                             <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-100 pt-1">
-                                {product.name}
+                                {product.title}
                             </h1>
                         </div>
-                        <div className="text-2xl font-black text-indigo-400 sm:text-right">
-                            {product.price}
+                        <div className="text-2xl font-black text-indigo-400 sm:text-right whitespace-nowrap">
+                            ${product.price}
                         </div>
                     </div>
 
