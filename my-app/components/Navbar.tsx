@@ -14,6 +14,15 @@ export default function Navbar() {
                     <a href="/about" className="text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors">About</a>
                     <a href="/contact" className="text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors">Contact</a>
                 </nav>
+
+                <div className="flex items-center gap-4">
+                    <a href="/login" className="text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors">
+                        Sign In
+                    </a>
+                    <a href="/register" className="py-1 px-4 text-sm font-medium text-slate-950 bg-indigo-400 hover:bg-indigo-300 active:bg-indigo-500 rounded-lg transition-all shadow-lg shadow-indigo-500/5">
+                        Sign Up
+                    </a>
+                </div>
             </div>
         </header>
     );
