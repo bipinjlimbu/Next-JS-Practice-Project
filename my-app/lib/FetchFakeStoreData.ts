@@ -1,4 +1,4 @@
-export async function FetchFakeStoreData(path: `/${string}`) {
-    const res = await fetch(`https://localhost:3000${path}`);
-    return res.json();
+export default async function FetchFakeStoreData(path: `/${string}`) {
+    const res = await fetch(`http://localhost:3000${path}`);
+    return await res.json();
 }

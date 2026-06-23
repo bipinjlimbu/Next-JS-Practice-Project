@@ -2,12 +2,12 @@ import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import wait from '@/lib/wait';
-import FetchFakeStoreAPI from '@/components/FetchFakeStoreAPI';
+import FetchFakeStoreData from '@/lib/FetchFakeStoreData';
 
 export default async function ProductsPage() {
     await wait(2000);
 
-    const products: ProductsType[] | null = await FetchFakeStoreAPI('/products');
+    const products: ProductsType[] | null = await FetchFakeStoreData('/api/products');
     if (!products) return notFound();
 
     return (
