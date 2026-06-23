@@ -1,6 +1,6 @@
 import { FakeStoreData } from "@/data/FakeStoreData";
 
-export default async function GET(request: Request, ctx: RouteContext<"/api/products/[id]">) {
+export async function GET(req: Request, ctx: RouteContext<"/api/products/[id]">) {
     const { id } = await ctx.params;
     const product = FakeStoreData.find((item) => item.id === Number(id));
     if (!product) {
